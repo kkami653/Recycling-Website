@@ -1,0 +1,359 @@
+/* 首页css样式 */
+/* 版心 */
+.wrapper {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+body {
+    background-color: #f3f5f7;
+}
+
+/* 头部区域 */
+.header {
+    height: 100px;
+    /* width: 7500px; */
+    background-color: #fff;
+}
+
+.header .wrapper {
+    display: flex;
+    padding-top: 29px;
+}
+
+
+/* logo */
+.logo a {
+    display: block;
+    padding-left: 10px;
+    width: 95px;
+    height: 41px;
+    /* background-image: url(../images/logo.png); */
+    font-size: 0;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+}
+
+
+/* 导航 */
+.nav {
+    margin-left: 102px;
+}
+.nav ul {
+    display: flex;
+}
+.nav li {
+    margin-right: 24px;
+}
+.nav li a {
+    display: block;
+    padding: 6px 8px;
+    line-height: 27px;
+    font-size: 19px;
+}
+
+.nav li .active,
+.nav li a:hover {
+    border-bottom: 2px solid #00a4ff;
+}
+
+.search {
+    display: flex;
+    margin-left: 64px;
+    padding-left: 19px;
+    padding-right: 12px;
+    width: 412px;
+    height: 40px;
+    background-color: #f3f5f7;
+    border-radius: 20px;
+    
+}
+.search input {
+    flex: 1;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    
+}
+.search input::placeholder {
+    font-size: 14px;
+    color: #999;
+}
+.search a {
+    align-self: center;
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/search.png);
+}
+
+
+.user {
+    
+    margin-left: 32px;
+    margin-top: 4px;
+}
+.user img {
+    vertical-align: middle;
+    margin-right: 7px;
+}
+.user span {
+    font-size: 16px;
+    color: #666;
+}
+
+
+/* banner区域 */
+.banner {
+ 
+    height: 420px;
+    background-color: #0092cb;
+}
+.banner .wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 420px;
+    background-image: url(../uploads/banner.png);
+}
+
+.banner .left {
+    padding: 3px 20px;
+    width: 191px;
+    height: 420px;
+    background-color: rgba(0, 0, 0, 0.42);
+}
+.banner .left a{
+    display: block;
+    height: 46px;
+    background: url(../images/right.png) no-repeat right center;
+
+    line-height: 46px;
+    color: #fff;
+    font-size: 16px;
+}
+.banner .left a:hover {
+    background-image: url(../images/right-hover.png);
+    color: #00a4ff;
+}
+
+.banner .right {
+    margin-top: 60px;
+    border-radius: 10px;
+    width: 218px;
+    height: 305px;
+    background-color: #209dd5;
+
+}
+.banner h3 {
+    margin-left: 14px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 400;
+}
+.banner .content {
+    padding: 14px;
+    width: 218px;
+    height: 257px;
+    background-color: #fff;
+    border-radius: 10px;
+   
+}
+.banner .right dl {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.banner .right dl dt {
+    padding-bottom: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+}
+.banner .right dl dd {
+    padding-bottom: 8px;
+    font-size: 12px;
+    line-height: 16px;
+}
+.banner .right dd span{
+    color: #00a4ff;
+}
+.banner .right dd strong{
+    color: #7d7d7d;
+    font-weight: normal;
+}
+.banner .right  a {
+    display: block;
+    height: 32px;
+    background-color: #00a4ff;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 15px;
+    color: #fff;
+}
+
+
+.recommend {
+    display: flex;
+    width: 1200px;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0px 1px 2px 0px rgba(211, 211, 211, 0.5);
+    margin-top: 11px;
+    padding: 0 20px;
+    line-height: 60px;
+}
+.recommend h3 {
+    font-weight: normal;
+    font-size: 18px;
+    
+    color: #00a4ff;
+}
+.recommend ul {
+    flex: 1;
+    display: flex;
+}
+.recommend ul li a {
+    padding: 0 24px;
+    border-right: 1px solid #e0e0e0;
+    font-size: 18px;
+}
+.recommend ul li:nth-child(9) a {
+    border-right: 0;
+}
+.recommend .modify {
+    font-size: 16px;
+    color: #00a4ff;
+}
+
+
+
+.course {
+    margin-top: 15px;
+}
+
+/* 标题 公共类 与其他区域公用 */
+.hd {
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    line-height: 60px;
+}
+.hd h3 {
+    font-size: 21px;
+    font-weight: normal;
+}
+.hd .more {
+    font-size: 14px;
+    color: #999;
+    padding-right: 20px;
+    background: url(../images/more.png) no-repeat right center ;
+}
+/* 课程内容 公共类 */
+.bd ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.bd li{
+    margin-bottom: 14px;
+    width: 228px;
+    height: 271px;
+    background-color: pink;
+}
+.bd li .pic {
+    height: 156px;
+}
+.bd li .text {
+    height: 115px;
+    background-color: #fff;
+    padding: 20px;
+}
+.bd .text h4 {
+    margin-bottom: 13px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+
+}
+.bd .text p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+}
+.bd .text span{
+    color: #fa5400;
+}
+.bd .text i {
+    font-style: normal;
+}
+.hd ul {
+    display: flex;
+}
+.hd ul li {
+    font-size: 16px;
+    padding: 0 30px;
+}
+.hd  .active{
+    color: #00a4ff;
+}
+.bd {
+    display: flex;
+    justify-content: space-between;
+}
+.bd .left {
+    width: 228px;
+    /* background-color: powderblue; */
+}
+.bd .right {
+    width: 957px;
+    
+}
+.bd .top {
+    margin-bottom: 15px;
+    height: 100px;
+}
+
+
+/* 版权 */
+.footer {
+    margin-top: 60px;
+    padding-top: 60px;
+    height: 273px;
+    background-color: #fff;
+}
+.footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.footer .left {
+    width: 440px;
+
+}
+.footer p {
+    padding-top: 24px;
+    padding-bottom: 14px;
+    font-size: 12px;
+    line-height: 17px;
+    color: #666;
+}
+.footer .download {
+    display: block;
+    width: 120px;
+    height: 36px;
+    border: 1px solid #00a4ff;
+    text-align: center;
+    line-height: 36px;
+    font-size: 16px;
+    color: #0092cb;
+}
+.footer .right {
+    display: flex;
+    
+}
+.footer .right dl {
+    margin-left: 130px;
+}
