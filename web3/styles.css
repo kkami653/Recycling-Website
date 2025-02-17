@@ -85,12 +85,23 @@ nav:hover > a:not(:hover) {
   color: rgb(53, 53, 53);
 }
 
+.container {
+  position: absolute;
+  top: 41.8%;
+  right: 81%;
+  transform: translate(50%, -50%);
+}
+
+.logo {
+  width: 150px; /* 或其他宽度 */
+  height: auto;
+}
+
 .title {
   position: absolute;
-  top: 40%;
-  right: 50%;
+  top: 38%;
+  right: 45%;
   transform: translate(50%, -50%);
-  
 }
 
 .title h3 {
@@ -102,7 +113,7 @@ nav:hover > a:not(:hover) {
 }
 
 .title h1 {
-  font-size: 15rem;
+  font-size: 4.5rem;
   font-weight: 800;
   letter-spacing: 50px;
   text-transform: uppercase;
