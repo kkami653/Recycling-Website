@@ -2,326 +2,64 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>智能垃圾分类压缩回收装置</title>
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智能垃圾分类压缩回收装置</title>
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
-    <!-- 头部区域 -->
-    <div class="header">
-        <div class="wrapper">
-            <!-- logo -->
-            <div class="logo">
-                <h1><a href="#">
-                        <img src="./images/logo.jpg" alt="">
-                        学成在线
-                    </a></h1>
-            </div>
-            <!-- 导航 -->
-            <div class="nav">
-                <ul>
-                    <li><a href="#" class="active">首页</a></li>
-                    <li><a href="#">课程</a></li>
-                    <li><a href="#">职业规划</a></li>
-                </ul>
-            </div>
-            <!-- 搜索 -->
-            <div class="search">
-                <input type="text" placeholder="请输入关键词">
-                <a href="#"></a>
-            </div>
-            <!-- 用户 -->
-            <div class="user">
-                <a href="#">
-                    <img src="./uploads/user.png" alt="">
-                    <span>hhh</span>
-                </a>
-            </div>
-        </div>
+
+  <header>
+    <nav>
+      <a href="#" class="nav-items active">首页</a>
+      <a href="./product.html" class="nav-items">产品介绍</a>
+      <a href="./us.html" class="nav-items">关于我们</a>
+      <a href="./contact.html" class="nav-items">联系我们</a>
+    </nav>
+  </header>
+
+  <div class="content">
+    <img src="./images/img/bac 3.png" alt="background" class="back-3">
+
+    <div class="container">
+      <img src="./images/logo2.jpg" alt="logo" class="logo">
     </div>
 
-    <!-- banner区域 -->
-    <div class="banner">
-        <div class="wrapper">
-            <div class="left">
-                <ul>
-                    <li><a href="#">前端开发</a></li>
-                    <li><a href="#">后端开发</a></li>
-                    <li><a href="#">移动开发</a></li>
-                    <li><a href="#">人工智能</a></li>
-                    <li><a href="#">商业预测</a></li>
-                    <li><a href="#">云计算&大数据</a></li>
-                    <li><a href="#">运维&测试</a></li>
-                    <li><a href="#">UI测试</a></li>
-                    <li><a href="#">产品</a></li>
-                </ul>
-            </div>
-            <div class="right">
-                <h3>我的课程表</h3>
-                <div class="content">
-                    <dl>
-                        <dt>数据可视化课程</dt>
-                        <dd><span>正在学习</span>-<strong>echarts使用步骤</strong></dd>
-                    </dl>
-                    <dl>
-                        <dt>Vue3医疗项目课程</dt>
-                        <dd><span>正在学习</span>-<strong>认识组合式API</strong></dd>
-                    </dl>
-                    <dl>
-                        <dt>React核心技术课程</dt>
-                        <dd><span>正在学习</span>-<strong>rudex配合TS使用</strong></dd>
-                    </dl>
-                    <a href="#">全部课程</a>
-                </div>
-            </div>
-        </div>
+    <div class="title">
+      <h1>智能垃圾分类压缩回收装置</h1>
     </div>
 
-    <!-- 精品推荐 -->
-    <!-- 类名写wrapper 就会居中 -->
-    <div class="recommend wrapper">
-        <h3>精品推荐</h3>
-        <ul>
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">HTML</a></li>
-        </ul>
-        <a href="#" class="modify">修改兴趣</a>
-    </div>
-    <!-- course -->
-    <div class="course wrapper">
-        <div class="hd">
-            <h3>精品推荐</h3>
-            <a href="#" class="more">查看全部</a>
-        </div>
-        <div class="bd">
-            <ul>
-                <li>
-                    <a href="#">
-                        <div class="pic">
-                            <img src="./uploads/course01.png" alt="">
-                        </div>
-                        <div class="text">
-                            <h4>JavaScript数据看板项目实战</h4>
-                            <p><span>高级</span>-<i>1125人在学习</i></p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="pic">
-                            <img src="./uploads/course01.png" alt="">
-                        </div>
-                        <div class="text">
-                            <h4>JavaScript数据看板项目实战</h4>
-                            <p><span>高级</span>-<i>1125人在学习</i></p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="pic">
-                            <img src="./uploads/course01.png" alt="">
-                        </div>
-                        <div class="text">
-                            <h4>JavaScript数据看板项目实战</h4>
-                            <p><span>高级</span>-<i>1125人在学习</i></p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="pic">
-                            <img src="./uploads/course01.png" alt="">
-                        </div>
-                        <div class="text">
-                            <h4>JavaScript数据看板项目实战</h4>
-                            <p><span>高级</span>-<i>1125人在学习</i></p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="pic">
-                            <img src="./uploads/course01.png" alt="">
-                        </div>
-                        <div class="text">
-                            <h4>JavaScript数据看板项目实战</h4>
-                            <p><span>高级</span>-<i>1125人在学习</i></p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="pic">
-                            <img src="./uploads/course01.png" alt="">
-                        </div>
-                        <div class="text">
-                            <h4>JavaScript数据看板项目实战</h4>
-                            <p><span>高级</span>-<i>1125人在学习</i></p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="pic">
-                            <img src="./uploads/course01.png" alt="">
-                        </div>
-                        <div class="text">
-                            <h4>JavaScript数据看板项目实战</h4>
-                            <p><span>高级</span>-<i>1125人在学习</i></p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="pic">
-                            <img src="./uploads/course01.png" alt="">
-                        </div>
-                        <div class="text">
-                            <h4>JavaScript数据看板项目实战</h4>
-                            <p><span>高级</span>-<i>1125人在学习</i></p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="pic">
-                            <img src="./uploads/course01.png" alt="">
-                        </div>
-                        <div class="text">
-                            <h4>JavaScript数据看板项目实战</h4>
-                            <p><span>高级</span>-<i>1125人在学习</i></p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="pic">
-                            <img src="./uploads/course01.png" alt="">
-                        </div>
-                        <div class="text">
-                            <h4>JavaScript数据看板项目实战</h4>
-                            <p><span>高级</span>-<i>1125人在学习</i></p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <img src="./images/img/bac 2.2.png" alt="background" class="back-2">
+    <img src="./images/img/bac 1.png" alt="background" class="back-1">
 
-    <!-- 前端 -->
-
-
-    <div class="wrapper">
-        <div class="hd">
-            <h3>前端开发工程师</h3>
-            <ul>
-                <li><a href="#" class="active">热门</a></li>
-                <li><a href="#">初级</a></li>
-                <li><a href="#">中级</a></li>
-                <li><a href="#">高级</a></li>
-            </ul>
-            <a href="#" class="more">查看全部</a>
-        </div>
-        <div class="bd">
-            <div class="left">
-                <img src="./uploads/web_left.png" alt="">
-            </div>
-            <div class="right">
-                <div class="top">
-                    <img src="./uploads/web_top.png" alt="">
-                </div>
-                <div class="bottom">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <div class="pic">
-                                    <img src="./uploads/course01.png" alt="">
-                                </div>
-                                <div class="text">
-                                    <h4>JavaScript数据看板项目实战</h4>
-                                    <p><span>高级</span>-<i>1125人在学习</i></p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="pic">
-                                    <img src="./uploads/course01.png" alt="">
-                                </div>
-                                <div class="text">
-                                    <h4>JavaScript数据看板项目实战</h4>
-                                    <p><span>高级</span>-<i>1125人在学习</i></p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="pic">
-                                    <img src="./uploads/course01.png" alt="">
-                                </div>
-                                <div class="text">
-                                    <h4>JavaScript数据看板项目实战</h4>
-                                    <p><span>高级</span>-<i>1125人在学习</i></p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="pic">
-                                    <img src="./uploads/course01.png" alt="">
-                                </div>
-                                <div class="text">
-                                    <h4>JavaScript数据看板项目实战</h4>
-                                    <p><span>高级</span>-<i>1125人在学习</i></p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <div class="info-wrap">
+      <p>
+        随着城市化进程的加快和人口的增长，垃圾产生量日益增多，垃圾处理成为了一个亟待解决的环境问题。垃圾智能分类压缩回收装置是一种利用先进技术对垃圾进行自动分类、压缩和回收的设备。
+      </p>
     </div>
 
 
-
-    <!-- 版权 -->
-    <div class="footer">
-        <div class="wrapper">
-            <div class="left">
-                <a href="#"><img src="./images/logo.png" alt=""></a>
-                <p>学成在线爱国才会觉得国外很多国外的v肝脏我国的是v和高度飞行过程v发球局激发1111111</p>
-                <a href="#" class="download">下载app</a>
-            </div>
-            <div class="right">
-                <dl>
-                    <dt>合作伙伴</dt>
-                    <dd><a href="#">合作机构</a></dd>
-                    <dd><a href="#">合作导师</a></dd>
-                </dl>
-                <dl>
-                    <dt>合作伙伴</dt>
-                    <dd><a href="#">合作机构</a></dd>
-                    <dd><a href="#">合作导师</a></dd>
-                </dl>
-                <dl>
-                    <dt>合作伙伴</dt>
-                    <dd><a href="#">合作机构</a></dd>
-                    <dd><a href="#">合作导师</a></dd>
-                </dl>
-            </div>
-        </div>
+    <div class="cta">
+      <button>
+        了解更多
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
     </div>
+
+    <div class="slider">
+      <i class="fa-solid fa-chevron-left"></i>
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+  </div>
+
 </body>
 
 </html>
