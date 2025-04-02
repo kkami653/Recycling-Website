@@ -49,10 +49,11 @@
         <div class="card">
           <div class="image-section">
             <!-- 替换为你的图片路径 -->
-            <img src="images/img4.jpg" alt="示例图片">
+            <img src="images/7.jpg" alt="示例图片">
           </div>
           <div class="content-section">
             <h2>智能分类压缩回收装置 - 基础款</h2>
+            <button onclick="openProductPage()">查看商品详情</button>
             <p>产品功能：自动识别并分类可回收物、有害垃圾和其他垃圾，对分类后的垃圾进行压缩处理。</p>
             <p>核心优势：分类准确率高达 90% 以上，压缩比可达 3:1，降低运输成本。</p>
             <p>核心创新：采用先进的传感器和算法，实现智能分类。</p>
@@ -64,10 +65,11 @@
         <div class="card">
           <div class="image-section">
             <!-- 替换为你的图片路径 -->
-            <img src="images/img3.jpg" alt="示例图片">
+            <img src="images/8.jpg" alt="示例图片">
           </div>
           <div class="content-section">
             <h2>智能分类压缩回收装置 - 进阶款</h2>
+            <button onclick="openProductPage()">查看商品详情</button>
             <p>产品功能：在基础款功能上增加远程监控和数据分析功能，可实时掌握设备运行状态和垃圾处理数据 </p>
             <p>(7) 核心优势：远程监控确保设备稳定运行，数据分析为垃圾管理提供决策依据。</p>
             <p>核心创新：物联网技术的应用实现远程连接。</p>
@@ -79,6 +81,165 @@
 
 
   </div>
+
+  <!-- buy -->
+
+  <button onclick="openProductPage()">查看商品详情</button>
+  <div class="overlay" id="productOverlay">
+    <div class="product-container">
+      <span class="close-button" onclick="closeProductPage()">×</span>
+      <div class="product-images">
+        <div class="slider">
+          <div class="slide active">
+            <img src="images/5.jpg" alt="商品图片 1">
+          </div>
+          <div class="slide">
+            <img src="images/6.jpg" alt="商品图片 2">
+          </div>
+          <div class="slide">
+            <img src="images/9.jpg" alt="商品图片 3">
+          </div>
+        </div>
+        <div class="thumbnails">
+          <img class="thumbnail active" src="images/6.jpg" alt="缩略图 1">
+          <img class="thumbnail" src="images/6.jpg" alt="缩略图 2">
+          <img class="thumbnail" src="images/9.jpg" alt="缩略图 3">
+        </div>
+      </div>
+      <div class="product-details">
+        <h2 class="product-title">智能垃圾分类压缩回收装置</h2>
+        <p class="product-price" id="price-display">请选择规格查看价格</p>
+        <p class="product-desc">这是一个示例商品的详细描述，这里可以介绍商品的特点、功能、材质等信息。</p>
+        <div class="specification">
+          <label for="spec">规格选择</label>
+          <select id="spec" onchange="updatePrice()">
+            <option value="S1">基础款-小型设备</option>
+            <option value="L1">基础款-大型设备</option>
+            <option value="S2">进阶款-小型设备</option>
+            <option value="L2">进阶款-大型设备</option>
+          </select>
+        </div>
+        <div class="quantity-control">
+          <button onclick="decreaseQuantity()">-</button>
+          <input type="number" id="quantity" value="1" min="1">
+          <button onclick="increaseQuantity()">+</button>
+        </div>
+        <div class="rent-months">
+          <label for="rent-months">租用月数</label>
+          <select id="rent-months">
+            <option value="1">1 个月</option>
+            <option value="3">3 个月</option>
+            <option value="6">6 个月</option>
+            <option value="12">12 个月</option>
+          </select>
+        </div>
+        <div class="action-buttons">
+          <button class="buy-button" onclick="buyProduct()">购买</button>
+          <button class="rent-button" onclick="rentProduct()">租用</button>
+        </div>
+        <div class="reviews">
+          <h3>用户评价</h3>
+          <!-- <div class="review">
+            <div class="user">用户 A</div>
+            <div class="content">这个商品很不错，质量很好！</div>
+          </div>
+          <div class="review">
+            <div class="user">用户 B</div>
+            <div class="content">颜色很正，很喜欢。</div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    let currentSlide = 0;
+
+    const priceMap = {
+      'S1': { buy: 59999.99, rent: 809.00 },
+      'L1': { buy: 109999.99, rent: 4000.00 },
+      'S1': { buy: 79999.99, rent: 1209.00 },
+      'L1': { buy: 159999.99, rent: 7500.00 }
+    };
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        thumbnails[i].classList.remove('active');
+      });
+      slides[index].classList.add('active');
+      thumbnails[index].classList.add('active');
+      currentSlide = index;
+    }
+
+    thumbnails.forEach((thumbnail, index) => {
+      thumbnail.addEventListener('click', () => {
+        showSlide(index);
+      });
+    });
+
+    function increaseQuantity() {
+      const quantityInput = document.getElementById('quantity');
+      quantityInput.value = parseInt(quantityInput.value) + 1;
+      updateTotalPrice();
+    }
+
+    function decreaseQuantity() {
+      const quantityInput = document.getElementById('quantity');
+      const currentValue = parseInt(quantityInput.value);
+      if (currentValue > 1) {
+        quantityInput.value = currentValue - 1;
+        updateTotalPrice();
+      }
+    }
+
+    function updatePrice() {
+      const spec = document.getElementById('spec').value;
+      const priceDisplay = document.getElementById('price-display');
+      const buyPrice = priceMap[spec].buy;
+      const rentPrice = priceMap[spec].rent;
+      priceDisplay.textContent = `￥${buyPrice}（购买）/ ￥${rentPrice}（每月租用）`;
+      updateTotalPrice();
+    }
+
+    function updateTotalPrice() {
+      const quantityInput = document.getElementById('quantity');
+      const spec = document.getElementById('spec').value;
+      const buyPrice = priceMap[spec].buy;
+      const rentPrice = priceMap[spec].rent;
+      const buyTotal = buyPrice * parseInt(quantityInput.value);
+      const rentMonths = parseInt(document.getElementById('rent-months').value);
+      const rentTotal = rentPrice * parseInt(quantityInput.value) * rentMonths;
+      // 这里可以添加更新总价显示的代码
+    }
+
+    function buyProduct() {
+      const quantity = document.getElementById('quantity').value;
+      const spec = document.getElementById('spec').value;
+      const buyPrice = priceMap[spec].buy;
+      const total = buyPrice * parseInt(quantity);
+      alert(`你已成功购买 ${quantity} 件 ${spec} 规格的商品，总价为 ￥${total}！`);
+    }
+
+    function rentProduct() {
+      const quantity = document.getElementById('quantity').value;
+      const spec = document.getElementById('spec').value;
+      const rentMonths = document.getElementById('rent-months').value;
+      const rentPrice = priceMap[spec].rent;
+      const total = rentPrice * parseInt(quantity) * parseInt(rentMonths);
+      alert(`你已成功租用 ${quantity} 件 ${spec} 规格的商品 ${rentMonths} 个月，总价为 ￥${total}！`);
+    }
+
+    function openProductPage() {
+      document.getElementById('productOverlay').style.display = 'flex';
+    }
+
+    function closeProductPage() {
+      document.getElementById('productOverlay').style.display = 'none';
+    }
+  </script>
+
 </body>
 
 </html>
