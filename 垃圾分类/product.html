@@ -92,7 +92,8 @@
               </li>
               <li>
                 <strong>高效压缩：</strong>
-                压缩比3:1，显著降低运输成本
+                压缩效果与成本分析:
+                <div id="basicCompressionChart" style="width: 100%; height: 300px; margin-top: 10px;"></div>
               </li>
               <li>
                 <strong>智能化操作：</strong>
@@ -162,7 +163,8 @@
               </li>
               <li>
                 <strong>高效压缩：</strong>
-                压缩比4:1，最大程度降低运输成本
+                压缩效果与成本分析:
+                <div id="advancedCompressionChart" style="width: 100%; height: 300px; margin-top: 10px;"></div>
               </li>
               <li>
                 <strong>智能化操作：</strong>
@@ -359,10 +361,111 @@
   <footer>
     <div class="footer-content">
       <div class="footer-info">
-        <p>© 2024 智能垃圾分类压缩系统. 保留所有权利</p>
+        <p>© 2025 智能垃圾分类压缩系统. 保留所有权利</p>
       </div>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script>
+    function initCompressionCharts() {
+      const basicChart = echarts.init(document.getElementById('basicCompressionChart'));
+      const advancedChart = echarts.init(document.getElementById('advancedCompressionChart'));
+
+      const basicOption = {
+        tooltip: {
+          trigger: 'axis',
+          textStyle: {
+            fontSize: 14  // 提示框文字大小
+          }
+        },
+        legend: {
+          data: ['压缩前', '压缩后'],
+          bottom: 0,
+          textStyle: {
+            fontSize: 14  // 图例文字大小
+          }
+        },
+        grid: {
+          top: '15%',
+          left: '3%',
+          right: '4%',
+          bottom: '15%',
+          containLabel: true
+        },
+        xAxis: {
+          type: 'category',
+          data: ['体积(m³)', '运输成本(元/次)'],
+          axisLabel: {
+            interval: 0,
+            fontSize: 14  // x轴标签文字大小
+          }
+        },
+        yAxis: {
+          type: 'value',
+          name: '数值',
+          nameTextStyle: {
+            fontSize: 14  // y轴名称文字大小
+          },
+          axisLabel: {
+            fontSize: 14  // y轴标签文字大小
+          }
+        },
+        series: [
+          {
+            name: '压缩前',
+            type: 'bar',
+            data: [100, 1000],
+            itemStyle: {
+              color: '#FF6B6B'
+            },
+            label: {
+              show: true,
+              position: 'top',
+              fontSize: 14  // 数据标签文字大小
+            },
+            animationDuration: 1500,
+            animationEasing: 'elasticOut'
+          },
+          {
+            name: '压缩后',
+            type: 'bar',
+            data: [33, 330],
+            itemStyle: {
+              color: '#4ECB73'
+            },
+            label: {
+              show: true,
+              position: 'top',
+              fontSize: 14  // 数据标签文字大小
+            },
+            animationDuration: 1500,
+            animationDelay: 500,
+            animationEasing: 'elasticOut'
+          }
+        ]
+      };
+
+      // 进阶款配置（基于基础款配置修改）
+      const advancedOption = JSON.parse(JSON.stringify(basicOption));
+      advancedOption.series[1].data = [25, 250]; // 4:1压缩比
+
+      // 设置图表配置
+      basicChart.setOption(basicOption);
+      advancedChart.setOption(advancedOption);
+
+      // 添加窗口大小改变时的自适应
+      window.addEventListener('resize', function () {
+        basicChart.resize();
+        advancedChart.resize();
+      });
+    }
+
+    // 页面加载完成后初始化图表
+    document.addEventListener('DOMContentLoaded', function () {
+      initCompressionCharts();
+    });
+  </script>
 
 </body>
 

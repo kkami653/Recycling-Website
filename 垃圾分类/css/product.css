@@ -620,3 +620,24 @@ body {
 .footer-info {
   color: white;
 }
+
+.advantage-list li {
+  margin: 15px 0;
+  padding: 15px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.advantage-list li:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 确保图表容器在各种屏幕尺寸下都能正常显示 */
+@media (max-width: 768px) {
+
+  #basicCompressionChart,
+  #advancedCompressionChart {
+    height: 250px;
+  }
+}
