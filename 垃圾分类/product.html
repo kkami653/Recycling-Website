@@ -18,6 +18,7 @@
     <nav>
       <a href="./index.html" class="nav-items">首页</a>
       <a href="#" class="nav-items active">产品介绍</a>
+      <a href="./solution.html" class="nav-items">解决方案</a>
       <a href="./us.html" class="nav-items">关于我们</a>
       <a href="./contact.html" class="nav-items">联系我们</a>
     </nav>
@@ -92,7 +93,6 @@
               </li>
               <li>
                 <strong>高效压缩：</strong>
-                压缩效果与成本分析:
                 <div id="basicCompressionChart" style="width: 100%; height: 300px; margin-top: 10px;"></div>
               </li>
               <li>
@@ -163,7 +163,6 @@
               </li>
               <li>
                 <strong>高效压缩：</strong>
-                压缩效果与成本分析:
                 <div id="advancedCompressionChart" style="width: 100%; height: 300px; margin-top: 10px;"></div>
               </li>
               <li>
@@ -373,18 +372,24 @@
       const advancedChart = echarts.init(document.getElementById('advancedCompressionChart'));
 
       const basicOption = {
+        title: {
+          text: '压缩效果与成本分析',
+          subtextStyle: {
+            color: '#666',
+            fontSize: 12
+          }
+        },
         tooltip: {
           trigger: 'axis',
-          textStyle: {
-            fontSize: 14  // 提示框文字大小
+          formatter: function (params) {
+            return params[0].name + '<br/>' +
+              params[0].seriesName + ': ' + params[0].value + '<br/>' +
+              params[1].seriesName + ': ' + params[1].value;
           }
         },
         legend: {
           data: ['压缩前', '压缩后'],
-          bottom: 0,
-          textStyle: {
-            fontSize: 14  // 图例文字大小
-          }
+          bottom: 0
         },
         grid: {
           top: '15%',
@@ -397,19 +402,12 @@
           type: 'category',
           data: ['体积(m³)', '运输成本(元/次)'],
           axisLabel: {
-            interval: 0,
-            fontSize: 14  // x轴标签文字大小
+            interval: 0
           }
         },
         yAxis: {
           type: 'value',
-          name: '数值',
-          nameTextStyle: {
-            fontSize: 14  // y轴名称文字大小
-          },
-          axisLabel: {
-            fontSize: 14  // y轴标签文字大小
-          }
+          name: '数值'
         },
         series: [
           {
@@ -421,8 +419,7 @@
             },
             label: {
               show: true,
-              position: 'top',
-              fontSize: 14  // 数据标签文字大小
+              position: 'top'
             },
             animationDuration: 1500,
             animationEasing: 'elasticOut'
@@ -436,8 +433,7 @@
             },
             label: {
               show: true,
-              position: 'top',
-              fontSize: 14  // 数据标签文字大小
+              position: 'top'
             },
             animationDuration: 1500,
             animationDelay: 500,

@@ -1,0 +1,327 @@
+/* 通用样式 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #333;
+}
+
+
+/* 解决方案卡片样式 */
+.solution-card {
+  display: flex;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.solution-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.solution-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.solution-content {
+  flex: 2;
+  padding: 25px;
+}
+
+.solution-content h3 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* 统计数据样式 */
+.solution-stats {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 28px;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #666;
+}
+
+/* 案例研究样式 */
+.case-study {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f8f8;
+  border-radius: 6px;
+}
+
+.case-study h4 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* 解决方案流程 */
+.solution-process {
+  padding: 4rem 2rem;
+  background: white;
+}
+
+.process-timeline {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 3rem auto;
+  position: relative;
+}
+
+.process-timeline::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #e0e0e0;
+  z-index: 1;
+}
+
+.process-step {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  background: white;
+  padding: 0 1rem;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+}
+
+
+/* 市场分析样式 */
+.analysis-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.analysis-card h3 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .solution-card {
+    flex-direction: column;
+  }
+
+  .solution-image {
+    min-width: 100%;
+    height: 200px;
+  }
+
+  .solution-stats {
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    flex: 1;
+    min-width: 120px;
+  }
+}
+
+
+/* echarts */
+.chart-container {
+  height: 400px;
+  padding: 20px;
+  position: relative;
+}
+
+.chart-bar {
+  position: absolute;
+  bottom: 40px;
+  width: 40px;
+  background: linear-gradient(to top, #43a2ca, #a8ddb5);
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chart-bar:hover {
+  filter: brightness(1.1);
+}
+
+.chart-label {
+  position: absolute;
+  bottom: 10px;
+  width: 60px;
+  text-align: center;
+  font-size: 12px;
+  transform: translateX(-10px);
+}
+
+.chart-value {
+  position: absolute;
+  bottom: -25px;
+  width: 60px;
+  text-align: center;
+  font-size: 12px;
+  transform: translateX(-10px);
+}
+
+.city-info {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.trend-chart {
+  height: 300px;
+  padding: 20px;
+  position: relative;
+}
+
+.trend-line {
+  position: absolute;
+  height: 2px;
+  background: #43a2ca;
+  transition: all 0.3s ease;
+}
+
+.trend-point {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #43a2ca;
+  transform: translate(-4px, -4px);
+}
+
+.trend-label {
+  position: absolute;
+  bottom: 10px;
+  font-size: 12px;
+  transform: translateX(-50%);
+}
+
+.trend-value {
+  position: absolute;
+  top: -20px;
+  font-size: 12px;
+  transform: translateX(-50%);
+}
+
+.chart-y-axis {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 40px;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.y-axis-label {
+  font-size: 12px;
+  color: #666;
+}
+
+/* 联系部分 */
+.solution-contact {
+  padding: 4rem 2rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('../assets/images/contact-bg.jpg') center/cover;
+  color: white;
+  text-align: center;
+}
+
+.contact-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  background-color: #00a4ff;
+}
+
+.contact-button:hover {
+  background: var(--primary-color-dark);
+  transform: scale(1.05);
+}
+
+/* footer */
+.footer-content {
+  position: absolute;
+  margin-top: 275px;
+  width: 100%;
+
+  background-color: #333;
+  text-align: center;
+}
+
+.footer-info {
+  color: white;
+}
