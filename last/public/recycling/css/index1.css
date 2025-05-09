@@ -1,0 +1,341 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 2vmin;
+}
+
+p,
+img {
+    pointer-events: none;
+    user-select: none;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background:url(19.jpg) no-repeat center center / cover;
+    background-size: 100% 71%;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 5%;
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 50px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  nav a {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: rgb(53, 53, 53);
+    width: 110px;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .active {
+    background-color: #16423c;
+    color: white;
+  }
+  
+  nav a:hover {
+    background-color: #16423c;
+    color: white;
+  }
+  
+  nav:hover>a:not(:hover) {
+    background-color: transparent;
+    color: rgb(53, 53, 53);
+  }
+
+.firstpage{
+    width: 100rem;
+    height: 50rem;
+}
+
+.firstpage_img{
+    width: 100rem;
+    height: 50rem;
+}
+
+.container {
+    position: absolute;
+    top: 37%;
+    right: 78%;
+    transform: translate(50%, -50%);
+  }
+  
+.logo {
+    width: 140px;
+    height: auto;
+  }
+  
+.title {
+    position: absolute;
+    top: 42%;
+    right: 45%;
+    transform: translate(50%, -50%);
+}
+
+.title h1 {
+    font-size: 3.6rem;
+    font-weight: 1000;
+    letter-spacing: 60px;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    margin: -20px 0;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.7);
+    width: 70%;
+    text-align: center;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.info-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 18%;
+    z-index: 1;
+}
+
+.cta {
+    position: absolute;
+    bottom: 8%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+  }
+  
+.cta button {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+  
+.cta button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(53, 53, 53);
+}
+
+.scrollbox {
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    overflow: hidden;
+}
+
+.scrollbox_container {
+    justify-content: start;
+    height: 100vh;
+    flex-shrink: 0;
+}
+
+.scrollbox_container_card {
+    position: relative;
+    width: 45rem;
+    height: 40rem;
+    background-color: #f7f7f7;
+    border-radius: 5rem;
+    margin-left: 5rem;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.scc_city {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    opacity: 0.7;
+}
+
+.scc_truck {
+    position: absolute;
+    bottom: 0;
+    height: 6rem;
+}
+
+.scc_city1{
+    width: 800px;
+    height: auto;
+    left: calc(13.5% + -5rem);
+}
+
+.scc_truck1{
+    width: 150px;
+    height: auto;
+    left:  calc(75% + -5rem);
+} 
+
+.scc_city2{
+    left: calc(-23% + -5rem);
+}
+
+.scc_truck2{
+    width: 150px;
+    height: auto;
+    left: calc(-37% + -5rem);
+}
+
+.scc_city3{
+    width: 810px;
+    height: auto;
+    left: calc(-40% + -10rem);
+    height: calc(90%);
+}
+
+.scc_truck3{
+    width: 150px;
+    height: auto;
+    left: calc(-130% + -10rem);
+}
+
+.biaoyu_page{
+    width: 100rem;
+    height: 50rem;
+    background-color: #fbfff9;
+    border-radius: 2rem;
+    margin-bottom: 8rem;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
+.biaoyu{
+    font-size: 90px;
+    font-weight: 1000;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgb(10, 68, 13);
+    text-align: center;
+    margin: -20px 0;
+}
+
+.biaoyu:hover {
+    background-color: rgba(246, 255, 244, 0);
+    color: rgb(130, 255, 14);
+}
+
+.ai_page{
+    width: 90rem;
+    height: 30rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    margin-bottom: 8rem;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+    
+.ai_img{
+
+    width: 70rem;
+    height: auto;
+}
+
+.zhuangbox {
+    width: 100rem;
+    height: 20rem;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    margin-bottom: 8rem;
+    font-family: sans-serif;
+    font-size: 8rem;
+    color: #1c1b1b;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.gamebox {
+    width: 65rem;
+    height: 10rem;
+    border-radius: 5rem;
+    background-color: #ffffff00;
+    margin-bottom: 8rem;
+    font-family: sans-serif;
+    font-size: 8rem;
+    color: #f7f7f7;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.game {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+  }
+  
+.game button {
+    font-size: 25px;
+    font-weight: 550;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(15, 14, 14, 0.8);
+    background-color: transparent;
+    border: 1px solid rgba(145, 141, 141, 0.8);
+    border-radius: 50px;
+    height: 60px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.game button:hover {
+    background-color: rgba(74, 105, 84, 0.8);
+    color: rgb(255, 255, 255);
+}

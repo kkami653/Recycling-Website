@@ -2,64 +2,140 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>智能垃圾分类压缩回收装置</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>horizontal scrolling</title>
 
-  <!-- fontawesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-  <!-- stylesheet -->
-  <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/base.css">
-  <link rel="stylesheet" href="./css/index.css">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/index1.css">
 </head>
 
 <body>
 
-  <header>
-    <nav>
-      <a href="#" class="nav-items active">首页</a>
-      <a href="./product.html" class="nav-items">产品介绍</a>
-      <a href="./us.html" class="nav-items">关于我们</a>
-      <a href="./contact.html" class="nav-items">联系我们</a>
-    </nav>
-  </header>
+    <header>
+        <nav>
+          <a href="#" class="nav-items active">首页</a>
+          <a href="./product.html" class="nav-items">产品介绍</a>
+          <a href="./solution.html" class="nav-items">解决方案</a>
+          <a href="./game.html" class="nav-items">游戏体验</a>
+          <a href="./business.html" class="nav-items">商业模式</a>
+          <a href="./us.html" class="nav-items">关于我们</a>
+          <a href="./contact.html" class="nav-items">联系我们</a>
+        </nav>
+    </header>
+    
+    <div class="firstpage">
+        <img class="firstpage_img" src="images/bac 4.png">
 
-  <div class="content">
-    <img src="./images/img/bac 3.png" alt="background" class="back-3">
+        <div class="container">
+            <img src="./images/logo2.jpg" alt="logo" class="logo">
+        </div>
+      
+        <div class="title">
+          <h1>智能垃圾分类压缩回收装置</h1>
+        </div>
 
-    <div class="container">
-      <img src="./images/logo2.jpg" alt="logo" class="logo">
+        <div class="info-wrap">
+            <p>
+              随着城市化进程的加快和人口的增长，垃圾产生量日益增多，垃圾处理成为了一个亟待解决的环境问题。垃圾智能分类压缩回收装置是一种利用先进技术对垃圾进行自动分类、压缩和回收的设备。
+            </p>
+        </div>
+
+        <div class="cta">
+            <button>
+              了解更多
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
     </div>
 
-    <div class="title">
-      <h1>智能垃圾分类压缩回收装置</h1>
+    <div class="scrollbox">
+        <div class="scrollbox_container">
+            <div class="scrollbox_container_card">
+                <img class="scc_city scc_city1" src="images/15.jpg">
+                <img class="scc_truck scc_truck1" src="images/xxx.png">
+            </div>
+            <div class="scrollbox_container_card">
+                <img class="scc_city scc_city2" src="images/16.jpg">
+                <img class="scc_truck scc_truck2" src="images/xxx.png">
+            </div>
+            <div class="scrollbox_container_card">
+                <img class="scc_city scc_city3" src="images/14.jpg">
+                <img class="scc_truck scc_truck3" src="images/xxx.png">
+            </div>
+        </div>
     </div>
 
-    <img src="./images/img/bac 2.2.png" alt="background" class="back-2">
-    <img src="./images/img/bac 1.png" alt="background" class="back-1">
-
-    <div class="info-wrap">
-      <p>
-        随着城市化进程的加快和人口的增长，垃圾产生量日益增多，垃圾处理成为了一个亟待解决的环境问题。垃圾智能分类压缩回收装置是一种利用先进技术对垃圾进行自动分类、压缩和回收的设备。
-      </p>
+    <div class="biaoyu_page">
+        <div class="biaoyu">
+            AI压缩分类，让垃圾减量90%!!!
+        </div>
     </div>
 
-
-    <div class="cta">
-      <button>
-        了解更多
-        <i class="fa-solid fa-arrow-right"></i>
-      </button>
+    <div class="ai_page">
+        <img class="ai_img" src="images/17.jpg">
     </div>
 
-    <div class="slider">
-      <i class="fa-solid fa-chevron-left"></i>
-      <i class="fa-solid fa-chevron-right"></i>
+    <div class="zhuangbox">
+        zhuangzhi
     </div>
-  </div>
 
+    <div class="gamebox">
+        <div class="game">
+            <button>
+                快来挑战垃圾分类
+            </button>
+        </div>
+    </div>
 </body>
+<script>
+       const scrollbox = {
+        container: document.querySelector(".scrollbox_container"),
+        cards: [...document.querySelectorAll(".scrollbox_container_card")],
+        trucks: [...document.querySelectorAll(".scc_truck")],
+        citys: [...document.querySelectorAll(".scc_city")],
+        trigger_distance: 0,
+        border_distance: 0,
+        distance: 0,
+        resize() {
+            let _scrollbox = document.querySelector(".scrollbox");
+            _scrollbox.style.height = `${this.container.offsetWidth}px`;
+            this.trigger_distance = _scrollbox.offsetTop;
+            this.border_distance = _scrollbox.offsetTop + _scrollbox.offsetHeight - innerHeight;
+        },
+        move() {
+            if (scrollY >= this.trigger_distance &&
+                scrollY <= this.border_distance) {
+                this.distance = scrollY - this.trigger_distance;
+                this.container.style.transform = `translateY(${this.distance}px)`;
+                let distance_x =
+                    this.distance / (this.border_distance - this.trigger_distance) *
+                    (this.container.offsetWidth - innerWidth);
+                for (let i = 0; i < this.cards.length; i++) {
+                    this.cards[i].style.transform = `translateX(${-distance_x}px)`;
+                    this.trucks[i].style.transform = `translateX(${distance_x * 1.2}px)`;
+                    this.citys[i].style.transform = `translateX(${distance_x * 0.5}px)`;
+                };
+            };
+        }
+    };
+    scrollbox.resize();
+    window.addEventListener("resize", () => {
+        scrollbox.resize();
+    });
+    window.addEventListener("scroll", () => {
+        scrollbox.move();
+    });
+  
+  const hiddenElements = document.querySelectorAll(".flag");
+  hiddenElements.forEach((el) => observer.observe(el));
+
+</script>
 
 </html>

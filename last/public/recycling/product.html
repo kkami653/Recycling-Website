@@ -18,6 +18,8 @@
     <nav>
       <a href="./index.html" class="nav-items">首页</a>
       <a href="#" class="nav-items active">产品介绍</a>
+      <a href="./solution.html" class="nav-items">解决方案</a>
+      <a href="./business.html" class="nav-items">商业模式</a>
       <a href="./us.html" class="nav-items">关于我们</a>
       <a href="./contact.html" class="nav-items">联系我们</a>
     </nav>
@@ -48,32 +50,138 @@
       <div class="container">
         <div class="card">
           <div class="image-section">
-            <!-- 替换为你的图片路径 -->
-            <img src="images/7.jpg" alt="示例图片">
+            <!-- 基础款3D模型展示 -->
+            <div class="name-src">
+              <img src="./images/7.jpg" alt="商品图片 1">
+            </div>
+            <div class="model-viewer">
+              <div id="basic-3d-model">
+                <!-- 这里将集成 Three.js 展示基础款3D模型 -->
+              </div>
+              <div class="compression-demo">
+                <br>
+                <br>
+                <br>
+                <h4>压缩效果演示</h4>
+                <div class="compression-animation">
+                  <img src="./images/12.jpg">
+                </div>
+                <p>压缩前后对比：3:1压缩比</p>
+              </div>
+            </div>
           </div>
           <div class="content-section">
             <h2>智能分类压缩回收装置 - 基础款</h2>
             <button onclick="openProductPage()">查看商品详情</button>
-            <p>产品功能：自动识别并分类可回收物、有害垃圾和其他垃圾，对分类后的垃圾进行压缩处理。</p>
-            <p>核心优势：分类准确率高达 90% 以上，压缩比可达 3:1，降低运输成本。</p>
-            <p>核心创新：采用先进的传感器和算法，实现智能分类。</p>
-            <p>服务形式及内容：提供安装、调试、培训以及定期维护服务。</p>
+
+            <!-- 技术原理 -->
+            <div class="tech-flow">
+              <h3>技术原理</h3>
+              <div class="flow-chart">
+                <span>破袋</span> →
+                <span>智能识别</span> →
+                <span>自动分类</span> →
+                <span>高效压缩</span>
+              </div>
+            </div>
+
+            <!-- 核心优势 -->
+            <h3>核心优势</h3>
+            <ul class="advantage-list">
+              <li>
+                <strong>高精度分类：</strong>
+                智能图像识别技术，分类准确率90%以上
+              </li>
+              <li>
+                <strong>高效压缩：</strong>
+                <div id="basicCompressionChart" style="width: 100%; height: 300px; margin-top: 10px;"></div>
+              </li>
+              <li>
+                <strong>智能化操作：</strong>
+                简单直观的操作界面，一键式操作
+              </li>
+            </ul>
+
+            <!-- 服务内容 -->
+            <h3>服务内容</h3>
+            <ul class="service-list">
+              <li>专业安装和调试服务</li>
+              <li>操作人员培训</li>
+              <li>定期维护保养</li>
+              <li>技术支持服务</li>
+            </ul>
           </div>
         </div>
       </div>
+
+      <!-- 进阶款 -->
       <div class="container">
         <div class="card">
           <div class="image-section">
-            <!-- 替换为你的图片路径 -->
-            <img src="images/8.jpg" alt="示例图片">
+            <!-- 进阶款3D模型展示 -->
+            <div class="name-src">
+              <img src="./images/8.jpg" alt="商品图片 1">
+            </div>
+            <div class="model-viewer">
+              <div id="advanced-3d-model">
+
+              </div>
+
+              <div class="compression-demo">
+                <br>
+                <br>
+                <br>
+                <h4>压缩效果演示</h4>
+                <div class="compression-animation">
+                  <img src="./images/13.jpg">
+                </div>
+                <p>压缩前后对比：4:1压缩比</p>
+              </div>
+            </div>
           </div>
           <div class="content-section">
             <h2>智能分类压缩回收装置 - 进阶款</h2>
             <button onclick="openProductPage()">查看商品详情</button>
-            <p>产品功能：在基础款功能上增加远程监控和数据分析功能，可实时掌握设备运行状态和垃圾处理数据 </p>
-            <p>(7) 核心优势：远程监控确保设备稳定运行，数据分析为垃圾管理提供决策依据。</p>
-            <p>核心创新：物联网技术的应用实现远程连接。</p>
-            <p>服务形式及内容：除基础服务外，提供数据解读和优化建议服务。</p>
+
+            <!-- 技术原理 -->
+            <div class="tech-flow">
+              <h3>技术原理</h3>
+              <div class="flow-chart">
+                <span>破袋</span> →
+                <span>AI识别</span> →
+                <span>智能分类</span> →
+                <span>高效压缩</span> →
+                <span>数据分析</span>
+              </div>
+            </div>
+
+            <!-- 核心优势 -->
+            <h3>核心优势</h3>
+            <ul class="advantage-list">
+              <li>
+                <strong>高精度分类：</strong>
+                AI深度学习算法，分类准确率95%以上
+              </li>
+              <li>
+                <strong>高效压缩：</strong>
+                <div id="advancedCompressionChart" style="width: 100%; height: 300px; margin-top: 10px;"></div>
+              </li>
+              <li>
+                <strong>智能化操作：</strong>
+                远程监控系统，实时数据分析，智能预警维护
+              </li>
+            </ul>
+
+            <!-- 服务内容 -->
+            <h3>服务内容</h3>
+            <ul class="service-list">
+              <li>专业安装和调试服务</li>
+              <li>深度操作培训</li>
+              <li>定期维护保养</li>
+              <li>24/7技术支持</li>
+              <li>数据分析报告</li>
+              <li>系统优化建议</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -84,26 +192,26 @@
 
   <!-- buy -->
 
-  <button onclick="openProductPage()">查看商品详情</button>
+
   <div class="overlay" id="productOverlay">
     <div class="product-container">
       <span class="close-button" onclick="closeProductPage()">×</span>
       <div class="product-images">
         <div class="slider">
           <div class="slide active">
-            <img src="images/5.jpg" alt="商品图片 1">
+            <img src="./images/10.jpg" alt="商品图片 1">
           </div>
           <div class="slide">
-            <img src="images/6.jpg" alt="商品图片 2">
+            <img src="./images/11.jpg" alt="商品图片 2">
           </div>
           <div class="slide">
-            <img src="images/9.jpg" alt="商品图片 3">
+            <img src="./images/9.jpg" alt="商品图片 3">
           </div>
         </div>
         <div class="thumbnails">
-          <img class="thumbnail active" src="images/6.jpg" alt="缩略图 1">
-          <img class="thumbnail" src="images/6.jpg" alt="缩略图 2">
-          <img class="thumbnail" src="images/9.jpg" alt="缩略图 3">
+          <img class="thumbnail active" src="./images/10.jpg" alt="缩略图 1">
+          <img class="thumbnail" src="./images/11.jpg" alt="缩略图 2">
+          <img class="thumbnail" src="./images/9.jpg" alt="缩略图 3">
         </div>
       </div>
       <div class="product-details">
@@ -238,6 +346,122 @@
     function closeProductPage() {
       document.getElementById('productOverlay').style.display = 'none';
     }
+  </script>
+
+
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>开启智能垃圾处理新时代</h2>
+      <p>联系我们，获取详细产品信息和演示预约</p>
+      <a href="contact.html" class="cta-button">立即咨询</a>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <p>© 2025 智能垃圾分类压缩系统. 保留所有权利</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script>
+    function initCompressionCharts() {
+      const basicChart = echarts.init(document.getElementById('basicCompressionChart'));
+      const advancedChart = echarts.init(document.getElementById('advancedCompressionChart'));
+
+      const basicOption = {
+        title: {
+          text: '压缩效果与成本分析',
+          subtextStyle: {
+            color: '#666',
+            fontSize: 12
+          }
+        },
+        tooltip: {
+          trigger: 'axis',
+          formatter: function (params) {
+            return params[0].name + '<br/>' +
+              params[0].seriesName + ': ' + params[0].value + '<br/>' +
+              params[1].seriesName + ': ' + params[1].value;
+          }
+        },
+        legend: {
+          data: ['压缩前', '压缩后'],
+          bottom: 0
+        },
+        grid: {
+          top: '15%',
+          left: '3%',
+          right: '4%',
+          bottom: '15%',
+          containLabel: true
+        },
+        xAxis: {
+          type: 'category',
+          data: ['体积(m³)', '运输成本(元/次)'],
+          axisLabel: {
+            interval: 0
+          }
+        },
+        yAxis: {
+          type: 'value',
+          name: '数值'
+        },
+        series: [
+          {
+            name: '压缩前',
+            type: 'bar',
+            data: [100, 1000],
+            itemStyle: {
+              color: '#FF6B6B'
+            },
+            label: {
+              show: true,
+              position: 'top'
+            },
+            animationDuration: 1500,
+            animationEasing: 'elasticOut'
+          },
+          {
+            name: '压缩后',
+            type: 'bar',
+            data: [33, 330],
+            itemStyle: {
+              color: '#4ECB73'
+            },
+            label: {
+              show: true,
+              position: 'top'
+            },
+            animationDuration: 1500,
+            animationDelay: 500,
+            animationEasing: 'elasticOut'
+          }
+        ]
+      };
+
+      // 进阶款配置（基于基础款配置修改）
+      const advancedOption = JSON.parse(JSON.stringify(basicOption));
+      advancedOption.series[1].data = [25, 250]; // 4:1压缩比
+
+      // 设置图表配置
+      basicChart.setOption(basicOption);
+      advancedChart.setOption(advancedOption);
+
+      // 添加窗口大小改变时的自适应
+      window.addEventListener('resize', function () {
+        basicChart.resize();
+        advancedChart.resize();
+      });
+    }
+
+    // 页面加载完成后初始化图表
+    document.addEventListener('DOMContentLoaded', function () {
+      initCompressionCharts();
+    });
   </script>
 
 </body>
