@@ -14,6 +14,60 @@
 
   <!-- 使用CDN引入ECharts -->
   <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+
+  <style>
+    /* 确保图表容器有正确的尺寸和可见性 */
+    #revenue-pie-container {
+      width: 100%;
+      height: 400px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    /* 饼图样式 */
+    .pie-chart {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      border-radius: 50%;
+      background: conic-gradient(#5470c6 0% 45%,
+          #91cc75 45% 75%,
+          #fac858 75% 90%,
+          #ee6666 90% 100%);
+    }
+
+    .pie-inner {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: white;
+      border-radius: 50%;
+      top: 75px;
+      left: 75px;
+    }
+
+    .pie-legend {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .color-box {
+      width: 15px;
+      height: 15px;
+      border-radius: 3px;
+    }
+  </style>
 </head>
 
 <body>
@@ -37,164 +91,184 @@
 
 
     <div class="bd">
+
       <!-- 收入来源分析 -->
       <div class="container">
         <div class="card">
           <div class="chart-section">
-            <!-- 收入来源饼图 -->
-            <div id="revenue-chart" style="width: 100%; height: 400px;"></div>
+            <div id="revenue-pie-container">
+              <div class="pie-chart">
+                <div class="pie-inner"></div>
+              </div>
+              <div class="pie-legend">
+                <div class="legend-item">
+                  <div class="color-box" style="background-color: #5470c6;"></div>
+                  <span>设备销售 (45%)</span>
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background-color: #91cc75;"></div>
+                  <span>设备租赁 (30%)</span>
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background-color: #fac858;"></div>
+                  <span>维护服务 (15%)</span>
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background-color: #ee6666;"></div>
+                  <span>数据服务 (10%)</span>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <section class="business-model">
+            <h2>商业模式概览</h2>
+            <div class="model-grid">
+              <div class="model-card">
+                <div class="model-icon">
+                  <img src="./images/business/1.png" alt="设备销售">
+                </div>
+                <h3>设备销售</h3>
+                <p>向政府、物业、企业等客户销售智能垃圾处理设备</p>
+                <ul class="model-features">
+                  <li>一次性购买</li>
+                  <li>分期付款</li>
+                  <li>租赁方案</li>
+                </ul>
+              </div>
+
+              <div class="model-card">
+                <div class="model-icon">
+                  <img src="./images/business/2.png" alt="运营服务">
+                </div>
+                <h3>运营服务</h3>
+                <p>提供设备维护、数据分析、技术支持等服务</p>
+                <ul class="model-features">
+                  <li>年度服务合同</li>
+                  <li>按次付费服务</li>
+                  <li>定制化方案</li>
+                </ul>
+              </div>
+
+              <div class="model-card">
+                <div class="model-icon">
+                  <img src="./images/business/3.png" alt="资源回收">
+                </div>
+                <h3>资源回收</h3>
+                <p>通过垃圾分类实现资源回收再利用</p>
+                <ul class="model-features">
+                  <li>可回收物变现</li>
+                  <li>有机肥料转化</li>
+                  <li>碳减排收益</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="cooperation-model">
+            <h2>合作模式</h2>
+            <div class="cooperation-grid">
+              <div class="cooperation-card">
+                <h3>政府合作</h3>
+                <div class="cooperation-content">
+                  <ul>
+                    <li>智慧城市项目</li>
+                    <li>环保示范工程</li>
+                    <li>市政设施改造</li>
+                  </ul>
+                  <div class="cooperation-benefits">
+                    <span>优势：政策支持、规模效应</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cooperation-card">
+                <h3>企业合作</h3>
+                <div class="cooperation-content">
+                  <ul>
+                    <li>园区垃圾处理</li>
+                    <li>商场物业服务</li>
+                    <li>工业废物处理</li>
+                  </ul>
+                  <div class="cooperation-benefits">
+                    <span>优势：稳定收益、示范效应</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cooperation-card">
+                <h3>社区合作</h3>
+                <div class="cooperation-content">
+                  <ul>
+                    <li>小区垃圾分类</li>
+                    <li>环保教育推广</li>
+                    <li>居民参与计划</li>
+                  </ul>
+                  <div class="cooperation-benefits">
+                    <span>优势：用户基础、社会效益</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="investment-value">
+            <h2>投资价值</h2>
+            <div class="value-grid">
+              <div class="value-card">
+                <div class="value-icon">
+                  <img src="./images/business/4.png" alt="市场潜力">
+                </div>
+                <h3>市场潜力</h3>
+                <p>垃圾处理市场规模年增长率20%</p>
+              </div>
+
+              <div class="value-card">
+                <div class="value-icon">
+                  <img src="./images/business/5.png" alt="技术优势">
+                </div>
+                <h3>技术优势</h3>
+                <p>AI识别准确率95%，专利技术保护</p>
+              </div>
+
+              <div class="value-card">
+                <div class="value-icon">
+                  <img src="./images/business/6.png" alt="盈利能力">
+                </div>
+                <h3>盈利能力</h3>
+                <p>年均利润率25%，回收期2年</p>
+              </div>
+
+              <div class="value-card">
+                <div class="value-icon">
+                  <img src="./images/business/7.png" alt="社会价值">
+                </div>
+                <h3>社会价值</h3>
+                <p>年减少碳排放100万吨</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="business-contact">
+            <div class="contact-content">
+              <h2>寻找商业合作伙伴</h2>
+              <p>共同开创智能垃圾处理新未来</p>
+              <a href="contact.html" class="contact-button">商务洽谈</a>
+            </div>
+          </section>
+          </main>
+
+          <footer>
+            <div class="footer-content">
+              <div class="footer-info">
+                <p>© 2025 智能垃圾分类压缩系统. 保留所有权利</p>
+              </div>
+            </div>
+          </footer>
         </div>
       </div>
 
-      <section class="business-model">
-        <h2>商业模式概览</h2>
-        <div class="model-grid">
-          <div class="model-card">
-            <div class="model-icon">
-              <img src="./images/business/1.png" alt="设备销售">
-            </div>
-            <h3>设备销售</h3>
-            <p>向政府、物业、企业等客户销售智能垃圾处理设备</p>
-            <ul class="model-features">
-              <li>一次性购买</li>
-              <li>分期付款</li>
-              <li>租赁方案</li>
-            </ul>
-          </div>
-
-          <div class="model-card">
-            <div class="model-icon">
-              <img src="./images/business/2.png" alt="运营服务">
-            </div>
-            <h3>运营服务</h3>
-            <p>提供设备维护、数据分析、技术支持等服务</p>
-            <ul class="model-features">
-              <li>年度服务合同</li>
-              <li>按次付费服务</li>
-              <li>定制化方案</li>
-            </ul>
-          </div>
-
-          <div class="model-card">
-            <div class="model-icon">
-              <img src="./images/business/3.png" alt="资源回收">
-            </div>
-            <h3>资源回收</h3>
-            <p>通过垃圾分类实现资源回收再利用</p>
-            <ul class="model-features">
-              <li>可回收物变现</li>
-              <li>有机肥料转化</li>
-              <li>碳减排收益</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="cooperation-model">
-        <h2>合作模式</h2>
-        <div class="cooperation-grid">
-          <div class="cooperation-card">
-            <h3>政府合作</h3>
-            <div class="cooperation-content">
-              <ul>
-                <li>智慧城市项目</li>
-                <li>环保示范工程</li>
-                <li>市政设施改造</li>
-              </ul>
-              <div class="cooperation-benefits">
-                <span>优势：政策支持、规模效应</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="cooperation-card">
-            <h3>企业合作</h3>
-            <div class="cooperation-content">
-              <ul>
-                <li>园区垃圾处理</li>
-                <li>商场物业服务</li>
-                <li>工业废物处理</li>
-              </ul>
-              <div class="cooperation-benefits">
-                <span>优势：稳定收益、示范效应</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="cooperation-card">
-            <h3>社区合作</h3>
-            <div class="cooperation-content">
-              <ul>
-                <li>小区垃圾分类</li>
-                <li>环保教育推广</li>
-                <li>居民参与计划</li>
-              </ul>
-              <div class="cooperation-benefits">
-                <span>优势：用户基础、社会效益</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="investment-value">
-        <h2>投资价值</h2>
-        <div class="value-grid">
-          <div class="value-card">
-            <div class="value-icon">
-              <img src="./images/business/4.png" alt="市场潜力">
-            </div>
-            <h3>市场潜力</h3>
-            <p>垃圾处理市场规模年增长率20%</p>
-          </div>
-
-          <div class="value-card">
-            <div class="value-icon">
-              <img src="./images/business/5.png" alt="技术优势">
-            </div>
-            <h3>技术优势</h3>
-            <p>AI识别准确率95%，专利技术保护</p>
-          </div>
-
-          <div class="value-card">
-            <div class="value-icon">
-              <img src="./images/business/6.png" alt="盈利能力">
-            </div>
-            <h3>盈利能力</h3>
-            <p>年均利润率25%，回收期2年</p>
-          </div>
-
-          <div class="value-card">
-            <div class="value-icon">
-              <img src="./images/business/7.png" alt="社会价值">
-            </div>
-            <h3>社会价值</h3>
-            <p>年减少碳排放100万吨</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="business-contact">
-        <div class="contact-content">
-          <h2>寻找商业合作伙伴</h2>
-          <p>共同开创智能垃圾处理新未来</p>
-          <a href="contact.html" class="contact-button">商务洽谈</a>
-        </div>
-      </section>
-      </main>
-
-      <footer>
-        <div class="footer-content">
-          <div class="footer-info">
-            <p>© 2025 智能垃圾分类压缩系统. 保留所有权利</p>
-          </div>
-        </div>
-      </footer>
-    </div>
-  </div>
-
-  <script>
+      <!-- <script>
     // 在页面加载完成后初始化ECharts
     document.addEventListener('DOMContentLoaded', function () {
       // 确保ECharts已加载
@@ -272,7 +346,7 @@
         document.getElementById('revenue-chart').innerHTML = '图表初始化失败: ' + error.message;
       }
     });
-  </script>
+  </script> -->
 </body>
 
 </html>
