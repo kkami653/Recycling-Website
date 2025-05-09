@@ -10,6 +10,120 @@
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/base.css">
   <link rel="stylesheet" href="./css/product.css">
+  <style>
+    .flow-chart .step {
+      position: relative;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .flow-chart .step:hover {
+      background-color: #f0f0f0;
+    }
+
+    .step-modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      max-width: 80%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .step-modal.active {
+      display: block;
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    .modal-overlay.active {
+      display: block;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 20px;
+      color: #666;
+    }
+
+    .modal-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      padding-right: 20px;
+      color: #333;
+      border-bottom: 2px solid #4ECB73;
+      padding-bottom: 10px;
+    }
+
+    .modal-content {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #666;
+      text-align: justify;
+    }
+
+    .modal-content p {
+      margin-bottom: 15px;
+      padding-left: 20px;
+    }
+
+    .modal-content .section {
+      margin-bottom: 25px;
+    }
+
+    .modal-content .section-title {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 15px;
+      font-size: 16px;
+      border-left: 4px solid #4ECB73;
+      padding-left: 10px;
+    }
+
+    .modal-content p:first-of-type {
+      margin-top: 10px;
+    }
+
+    .modal-content ul {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+
+    .modal-content li {
+      margin-bottom: 8px;
+      position: relative;
+    }
+
+    .modal-content li:before {
+      content: "•";
+      color: #4ECB73;
+      font-weight: bold;
+      position: absolute;
+      left: -15px;
+    }
+  </style>
 </head>
 
 <body>
@@ -78,10 +192,17 @@
             <div class="tech-flow">
               <h3>技术原理</h3>
               <div class="flow-chart">
-                <span>破袋</span> →
-                <span>智能识别</span> →
-                <span>自动分类</span> →
-                <span>高效压缩</span>
+                <span class="step"
+                  onclick="showModal('破袋预处理模块', '配置双轴逆向旋转切刀系统，通过视觉传感器,触发0.5-2rpm低速切割，实现聚乙烯/PET材质的非破坏性破袋。破袋后的散装垃圾经45°倾斜振动筛进行初级分选，筛孔直径15mm，有效分离厨余碎屑等有机质。')">破袋</span>
+                →
+                <span class="step"
+                  onclick="showModal('多模态识别系统', '<p>集成:<\p> <p>1. 光学识别单元：搭载ResNet-50卷积神经网络，实现金属/玻璃/塑料的实时分类（识别率≥92%） <\p>  <p>2. 气流分选模块：可调式离心风机产生1.2m/s层流，分离密度<1.2g/cm³的轻质材料<\p>        <p>3. 机械传感组件：压阻式重力传感器（16-7）实时监测容器载荷，精度±50g<\p>    ')">智能识别</span>
+                →
+                <span class="step"
+                  onclick="showModal('分级分选执行机构', '<p>1. 初级分选层：椭圆振动筛配合尼龙拨轮，振幅3-5mm，处理量200kg/h<\p>    <p>2. 精密分选区：     - 气动吸附装置：真空度-60kPa，抓取力15N   - 弹射分选机构：伺服电机驱动，投射距离0.8-1.5m可调<\p>      <p>3. 末端处理层：双通道收集系统（17/18），配置防回弹导流板<\p>  ')">自动分类</span>
+                →
+                <span class="step"
+                  onclick="showModal('压缩优化体系', '<p>  采用曲柄连杆增压机构：<\p>    - 液压驱动单元提供15kN线性推力  - 动态压力反馈：通过应变片实现0-20MPa实时监测  - 自适应压缩算法：当压缩阻力梯度>18%时自动停机保护')">高效压缩</span>
               </div>
             </div>
 
@@ -94,6 +215,7 @@
               </li>
               <li>
                 <strong>高效压缩：</strong>
+                压缩效果与成本分析
                 <div id="basicCompressionChart" style="width: 100%; height: 300px; margin-top: 10px;"></div>
               </li>
               <li>
@@ -147,11 +269,20 @@
             <div class="tech-flow">
               <h3>技术原理</h3>
               <div class="flow-chart">
-                <span>破袋</span> →
-                <span>AI识别</span> →
-                <span>智能分类</span> →
-                <span>高效压缩</span> →
-                <span>数据分析</span>
+                <span class="step"
+                  onclick="showModal('智能破袋模块', '<div class=\'section\'><div class=\'section-title\'>技术核心：多维度切割+自清洁系统</div><p>1. 采用三组钛合金刀片（硬度接近钻石）交错切割，通过激光定位精准识别袋口位置</p><p>2. 内置高压气喷装置（相当于10级风力）实时清除缠绕物</p><p>3. 破袋速度：每分钟处理20个标准垃圾袋，支持0.02mm超薄塑料袋</p></div><div class=\'section\'><div class=\'section-title\'>用户价值</div><p>无需手动拆袋，处理汤水垃圾不堵塞，连续工作无需人工清理</p></div>')">破袋</span>
+                →
+                <span class="step"
+                  onclick="showModal('AI识别系统', '<div class=\'section\'><div class=\'section-title\'>技术核心：物质特征扫描+深度学习</div><p>1. 高光谱扫描仪：通过不可见光检测垃圾分子结构（如区分PET塑料和PVC塑料）</p><p>2. 微波传感器：分析垃圾介电特性（准确识别含金属涂层的复合材料）</p><p>3. 智能学习引擎：每处理新型垃圾自动更新数据库，识别种类超过200类</p></div><div class=\'section\'><div class=\'section-title\'>用户价值</div><p>可识别奶茶杯吸塑包装、带铝箔的药品包装等复杂物品，识别错误率<2%</p></div>')">AI识别</span>
+                →
+                <span class="step"
+                  onclick="showModal('动态分选系统', '<div class=\'section\'><div class=\'section-title\'>技术核心：多机械臂协同+物理特性分选</div><p>1. 3台工业机器人协同作业：通过视觉定位抓取易碎品（如玻璃瓶）</p><p>2. 磁-电联合分选：</p><p>   - 超强磁铁（吸力是普通磁铁20倍）回收微型金属件</p><p>   - 高压静电场分离薄膜类垃圾（如塑料袋）</p><p>3. 弹射分选装置：通过力学传感器判断物体重量，精确弹射至对应回收箱</p></div><div class=\'section\'><div class=\'section-title\'>用户价值</div><p>每小时处理500kg垃圾，分选精度达95%，可回收物纯净度>90%</p></div>')">智能分类</span>
+                →
+                <span class="step"
+                  onclick="showModal('智能压缩系统', '<div class=\'section\'><div class=\'section-title\'>技术核心：自适应压力控制+能源再生</div><p>1. 三级压力调节：</p><p>   - 柔性模式（5吨压力）：处理含液体垃圾不飞溅</p><p>   - 标准模式（20吨压力）：压缩PET瓶至原体积1/15</p><p>   - 保护模式：自动避开玻璃等不可压物</p><p>2. 能量回收：压缩过程40%动能转化为电能供设备使用</p></div><div class=\'section\'><div class=\'section-title\'>用户价值</div><p>垃圾体积减少80%，设备耗电量降低50%</p></div>')">高效压缩</span>
+                →
+                <span class="step"
+                  onclick="showModal('数据中枢系统', '<div class=\'section\'><div class=\'section-title\'>技术核心：物联网+智能决策</div><p>1. 实时监测：87项运行参数（包括刀片磨损度、压缩压力曲线等）</p><p>2. 智能运维：</p><p>   - 提前3天预测设备故障</p><p>   - 自动生成清运路线（节约运输成本25%）</p><p>   - 垃圾成分分析报告（指导社区垃圾分类教育）</p><p>3. 云端管理：支持多个设备组网监控，数据看板实时显示处理量、碳减排量</p></div><div class=\'section\'><div class=\'section-title\'>用户价值</div><p>管理人员可通过手机查看设备状态，优化垃圾清运频率</p></div>')">数据分析</span>
               </div>
             </div>
 
@@ -164,6 +295,7 @@
               </li>
               <li>
                 <strong>高效压缩：</strong>
+                压缩效果与成本分析
                 <div id="advancedCompressionChart" style="width: 100%; height: 300px; margin-top: 10px;"></div>
               </li>
               <li>
@@ -259,6 +391,12 @@
       </div>
     </div>
   </div>
+  <div class="modal-overlay" id="modalOverlay"></div>
+  <div class="step-modal" id="stepModal">
+    <span class="modal-close" onclick="closeModal()">×</span>
+    <div class="modal-title" id="modalTitle"></div>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
   <script>
     const slides = document.querySelectorAll('.slide');
     const thumbnails = document.querySelectorAll('.thumbnail');
@@ -346,6 +484,21 @@
     function closeProductPage() {
       document.getElementById('productOverlay').style.display = 'none';
     }
+
+    function showModal(title, content) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalContent').innerHTML = content;
+      document.getElementById('stepModal').classList.add('active');
+      document.getElementById('modalOverlay').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('stepModal').classList.remove('active');
+      document.getElementById('modalOverlay').classList.remove('active');
+    }
+
+    // 点击遮罩层关闭弹窗
+    document.getElementById('modalOverlay').addEventListener('click', closeModal);
   </script>
 
 
@@ -374,7 +527,7 @@
 
       const basicOption = {
         title: {
-          text: '压缩效果与成本分析',
+          text: '',
           subtextStyle: {
             color: '#666',
             fontSize: 12
@@ -414,7 +567,7 @@
           {
             name: '压缩前',
             type: 'bar',
-            data: [100, 1000],
+            data: [600, 1000],
             itemStyle: {
               color: '#FF6B6B'
             },
@@ -428,7 +581,7 @@
           {
             name: '压缩后',
             type: 'bar',
-            data: [33, 330],
+            data: [200, 330],
             itemStyle: {
               color: '#4ECB73'
             },
@@ -445,7 +598,7 @@
 
       // 进阶款配置（基于基础款配置修改）
       const advancedOption = JSON.parse(JSON.stringify(basicOption));
-      advancedOption.series[1].data = [25, 250]; // 4:1压缩比
+      advancedOption.series[1].data = [150, 250]; // 4:1压缩比
 
       // 设置图表配置
       basicChart.setOption(basicOption);
